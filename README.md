@@ -1,9 +1,11 @@
 ==================================================================
+
 Getting and Cleaning Data Course Project
 Khalil Ababou
 Version 1.0
 
 ==================================================================
+
 Based on data from 
 
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
@@ -15,7 +17,8 @@ www.smartlab.ws
 
 ==================================================================
 
-run_analysis.R :
+Main Script "run_analysis.R": 
+======
 
    Merges the training and the test sets to create one data set.
 
@@ -27,7 +30,6 @@ run_analysis.R :
 
    From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
     
-==================================================================
 
 Notes: 
 ======
