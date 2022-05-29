@@ -1,0 +1,43 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+The run_analysis.R script performs actions required in the Coursera Getting and Cleaning Data Course Project, and was produced by Khalil Ababou.
+This file modifies and updates the provided codebooks with the data to indicate all the variables and summaries calculated, along with units, and any other relevant information.
+
+data = Raw data combining the following files: 
+
+      X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
+      y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
+      subject_train <- read.table ("./UCI HAR Dataset/train/subject_train.txt")
+      X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
+      y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
+      subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+      activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
+
+Variable Structure: 
+
+data.frame':	10299 obs. of  564 variables:
+ $ subject       : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ activity_class: int  1 1 1 1 1 1 1 1 1 1 ...
+ $ activity_label: chr  "WALKING" "WALKING" "WALKING" "WALKING" ...
+ $ V1            : num  0.308 0.327 0.304 0.24 0.29 ...
+ $ V2            : num  -0.01988 -0.03567 -0.01466 -0.00971 0.01534 ...
+ $ V3            : num  -0.1604 -0.1818 -0.0426 -0.122 -0.1167 ...
+ 
+datasummary = 
+- For each line of data, calculation of mean and standard deviation of the provided 561-feature vector with time and frequency domain variables. 
+- Grouping of data by Subject and Activity
+
+Variable Structure: 
+
+grouped_df [180 x 5] (S3: grouped_df/tbl_df/tbl/data.frame)
+ $ subject           : int [1:180] 1 1 1 1 1 1 2 2 2 2 ...
+ $ activity_class    : int [1:180] 1 2 3 4 5 6 1 2 3 4 ...
+ $ activity_label    : chr [1:180] "WALKING" "WALKING_UPSTAIRS" "WALKING_DOWNSTAIRS" "SITTING" ...
+ $ mean              : num [1:180] -0.319 -0.407 -0.297 -0.633 -0.647 ...
+ $ standard_deviation: num [1:180] 0.453 0.485 0.456 0.546 0.542 ...
+
+
+
