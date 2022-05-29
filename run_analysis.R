@@ -36,6 +36,8 @@ testdata <- cbind(subject_test, y_test, X_test)
 
 data <- rbind(testdata, traindata)
 
-## Assign Activity Labels to make data more explicit
+## Assign Activity Labels and reorder to make data head more explicit
 
-datawactivity <- merge(data, activity_labels)
+data <- merge(data, activity_labels)
+data <- data %>% select(subject, activity_class, activity_label, everything())
+data <- arrange(data, subject)
