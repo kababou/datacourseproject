@@ -45,10 +45,13 @@ data <- arrange(data, subject)
 
 ## Creates Data Frame with Mean & Standard Deviation for each measurement
 
-
 datasummary <- cbind(data[1:3], mean = apply(data[4:564], 1, mean), standard_deviation = apply (data[4:564], 1, sd))
 
 ## Groups by Subject and activity and computes mean of measurements Mean & Standard deviation
 
 datasummary <- group_by(datasummary, subject, activity_class, activity_label)
 datasummary <- summarize(datasummary, mean = mean(mean), standard_deviation = mean(standard_deviation))
+
+## Writes datasummary into txt file for submission
+
+write.table(datasummary, "./datasummary.txt", row.names = FALSE)

@@ -11,7 +11,7 @@
 
 
 
-<title>R Notebook</title>
+<title>Code Book for Getting &amp; Cleaning Data Course Project - Khalil Ababou Submission</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1760,7 +1760,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">R Notebook</h1>
+<h1 class="title toc-ignore">Code Book for Getting &amp; Cleaning Data
+Course Project - Khalil Ababou Submission</h1>
 
 </div>
 
@@ -1771,7 +1772,9 @@ Getting and Cleaning Data Course Project, and was produced by Khalil
 Ababou. This file modifies and updates the provided codebooks with the
 data to indicate all the variables and summaries calculated, along with
 units, and any other relevant information.</p>
-<p>data = Raw data combining the following files:</p>
+<div id="data" class="section level1">
+<h1>data</h1>
+<p>(Data Frame) Raw data combining the following files:</p>
 <pre><code>  X_train &lt;- read.table(&quot;./UCI HAR Dataset/train/X_train.txt&quot;)
   y_train &lt;- read.table(&quot;./UCI HAR Dataset/train/y_train.txt&quot;)
   subject_train &lt;- read.table (&quot;./UCI HAR Dataset/train/subject_train.txt&quot;)
@@ -1779,26 +1782,45 @@ units, and any other relevant information.</p>
   y_test &lt;- read.table(&quot;./UCI HAR Dataset/test/y_test.txt&quot;)
   subject_test &lt;- read.table(&quot;./UCI HAR Dataset/test/subject_test.txt&quot;)
   activity_labels &lt;- read.table(&quot;./UCI HAR Dataset/activity_labels.txt&quot;)</code></pre>
-<p>Variable Structure:</p>
-<p>data.frame’: 10299 obs. of 564 variables: $ subject : int 1 1 1 1 1 1
-1 1 1 1 … $ activity_class: int 1 1 1 1 1 1 1 1 1 1 … $ activity_label:
-chr “WALKING” “WALKING” “WALKING” “WALKING” … $ V1 : num 0.308 0.327
-0.304 0.24 0.29 … $ V2 : num -0.01988 -0.03567 -0.01466 -0.00971 0.01534
-… $ V3 : num -0.1604 -0.1818 -0.0426 -0.122 -0.1167 …</p>
-<p>datasummary = - For each line of data, calculation of mean and
-standard deviation of the provided 561-feature vector with time and
-frequency domain variables. - Grouping of data by Subject and
-Activity</p>
-<p>Variable Structure:</p>
-<p>grouped_df [180 x 5] (S3: grouped_df/tbl_df/tbl/data.frame) $ subject
-: int [1:180] 1 1 1 1 1 1 2 2 2 2 … $ activity_class : int [1:180] 1 2 3
-4 5 6 1 2 3 4 … $ activity_label : chr [1:180] “WALKING”
-“WALKING_UPSTAIRS” “WALKING_DOWNSTAIRS” “SITTING” … $ mean : num [1:180]
--0.319 -0.407 -0.297 -0.633 -0.647 … $ standard_deviation: num [1:180]
-0.453 0.485 0.456 0.546 0.542 …</p>
+</div>
+<div id="datasummary" class="section level1">
+<h1>datasummary</h1>
+<p>(Data Frame) Tidy Data Set as generated in txt file (last
+question)</p>
+<pre><code>  ## For each line of data, calculation of mean and standard deviation of the provided 561-feature vector with time and frequency domain variables. 
+  ## Grouping of data by Subject and Activity</code></pre>
+</div>
+<div id="x_train" class="section level1">
+<h1>X_train</h1>
+<p>“./UCI HAR Dataset/train/X_train.txt”</p>
+</div>
+<div id="y_train" class="section level1">
+<h1>y_train</h1>
+<p>“./UCI HAR Dataset/train/y_train.txt”</p>
+</div>
+<div id="subject_train" class="section level1">
+<h1>subject_train</h1>
+<p>“./UCI HAR Dataset/train/subject_train.txt”</p>
+</div>
+<div id="x_test" class="section level1">
+<h1>X_test</h1>
+<p>“./UCI HAR Dataset/test/X_test.txt”</p>
+</div>
+<div id="y_test" class="section level1">
+<h1>y_test</h1>
+<p>“./UCI HAR Dataset/test/y_test.txt”</p>
+</div>
+<div id="subject_test" class="section level1">
+<h1>subject_test</h1>
+<p>“./UCI HAR Dataset/test/subject_test.txt”</p>
+</div>
+<div id="activity_labels" class="section level1">
+<h1>activity_labels</h1>
+<p>“./UCI HAR Dataset/activity_labels.txt”</p>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGUgcnVuX2FuYWx5c2lzLlIgc2NyaXB0IHBlcmZvcm1zIGFjdGlvbnMgcmVxdWlyZWQgaW4gdGhlIENvdXJzZXJhIEdldHRpbmcgYW5kIENsZWFuaW5nIERhdGEgQ291cnNlIFByb2plY3QsIGFuZCB3YXMgcHJvZHVjZWQgYnkgS2hhbGlsIEFiYWJvdS4NClRoaXMgZmlsZSBtb2RpZmllcyBhbmQgdXBkYXRlcyB0aGUgcHJvdmlkZWQgY29kZWJvb2tzIHdpdGggdGhlIGRhdGEgdG8gaW5kaWNhdGUgYWxsIHRoZSB2YXJpYWJsZXMgYW5kIHN1bW1hcmllcyBjYWxjdWxhdGVkLCBhbG9uZyB3aXRoIHVuaXRzLCBhbmQgYW55IG90aGVyIHJlbGV2YW50IGluZm9ybWF0aW9uLg0KDQpkYXRhID0gUmF3IGRhdGEgY29tYmluaW5nIHRoZSBmb2xsb3dpbmcgZmlsZXM6IA0KDQogICAgICBYX3RyYWluIDwtIHJlYWQudGFibGUoIi4vVUNJIEhBUiBEYXRhc2V0L3RyYWluL1hfdHJhaW4udHh0IikNCiAgICAgIHlfdHJhaW4gPC0gcmVhZC50YWJsZSgiLi9VQ0kgSEFSIERhdGFzZXQvdHJhaW4veV90cmFpbi50eHQiKQ0KICAgICAgc3ViamVjdF90cmFpbiA8LSByZWFkLnRhYmxlICgiLi9VQ0kgSEFSIERhdGFzZXQvdHJhaW4vc3ViamVjdF90cmFpbi50eHQiKQ0KICAgICAgWF90ZXN0IDwtIHJlYWQudGFibGUoIi4vVUNJIEhBUiBEYXRhc2V0L3Rlc3QvWF90ZXN0LnR4dCIpDQogICAgICB5X3Rlc3QgPC0gcmVhZC50YWJsZSgiLi9VQ0kgSEFSIERhdGFzZXQvdGVzdC95X3Rlc3QudHh0IikNCiAgICAgIHN1YmplY3RfdGVzdCA8LSByZWFkLnRhYmxlKCIuL1VDSSBIQVIgRGF0YXNldC90ZXN0L3N1YmplY3RfdGVzdC50eHQiKQ0KICAgICAgYWN0aXZpdHlfbGFiZWxzIDwtIHJlYWQudGFibGUoIi4vVUNJIEhBUiBEYXRhc2V0L2FjdGl2aXR5X2xhYmVscy50eHQiKQ0KDQpWYXJpYWJsZSBTdHJ1Y3R1cmU6IA0KDQpkYXRhLmZyYW1lJzoJMTAyOTkgb2JzLiBvZiAgNTY0IHZhcmlhYmxlczoNCiAkIHN1YmplY3QgICAgICAgOiBpbnQgIDEgMSAxIDEgMSAxIDEgMSAxIDEgLi4uDQogJCBhY3Rpdml0eV9jbGFzczogaW50ICAxIDEgMSAxIDEgMSAxIDEgMSAxIC4uLg0KICQgYWN0aXZpdHlfbGFiZWw6IGNociAgIldBTEtJTkciICJXQUxLSU5HIiAiV0FMS0lORyIgIldBTEtJTkciIC4uLg0KICQgVjEgICAgICAgICAgICA6IG51bSAgMC4zMDggMC4zMjcgMC4zMDQgMC4yNCAwLjI5IC4uLg0KICQgVjIgICAgICAgICAgICA6IG51bSAgLTAuMDE5ODggLTAuMDM1NjcgLTAuMDE0NjYgLTAuMDA5NzEgMC4wMTUzNCAuLi4NCiAkIFYzICAgICAgICAgICAgOiBudW0gIC0wLjE2MDQgLTAuMTgxOCAtMC4wNDI2IC0wLjEyMiAtMC4xMTY3IC4uLg0KIA0KZGF0YXN1bW1hcnkgPSANCi0gRm9yIGVhY2ggbGluZSBvZiBkYXRhLCBjYWxjdWxhdGlvbiBvZiBtZWFuIGFuZCBzdGFuZGFyZCBkZXZpYXRpb24gb2YgdGhlIHByb3ZpZGVkIDU2MS1mZWF0dXJlIHZlY3RvciB3aXRoIHRpbWUgYW5kIGZyZXF1ZW5jeSBkb21haW4gdmFyaWFibGVzLiANCi0gR3JvdXBpbmcgb2YgZGF0YSBieSBTdWJqZWN0IGFuZCBBY3Rpdml0eQ0KDQpWYXJpYWJsZSBTdHJ1Y3R1cmU6IA0KDQpncm91cGVkX2RmIFsxODAgeCA1XSAoUzM6IGdyb3VwZWRfZGYvdGJsX2RmL3RibC9kYXRhLmZyYW1lKQ0KICQgc3ViamVjdCAgICAgICAgICAgOiBpbnQgWzE6MTgwXSAxIDEgMSAxIDEgMSAyIDIgMiAyIC4uLg0KICQgYWN0aXZpdHlfY2xhc3MgICAgOiBpbnQgWzE6MTgwXSAxIDIgMyA0IDUgNiAxIDIgMyA0IC4uLg0KICQgYWN0aXZpdHlfbGFiZWwgICAgOiBjaHIgWzE6MTgwXSAiV0FMS0lORyIgIldBTEtJTkdfVVBTVEFJUlMiICJXQUxLSU5HX0RPV05TVEFJUlMiICJTSVRUSU5HIiAuLi4NCiAkIG1lYW4gICAgICAgICAgICAgIDogbnVtIFsxOjE4MF0gLTAuMzE5IC0wLjQwNyAtMC4yOTcgLTAuNjMzIC0wLjY0NyAuLi4NCiAkIHN0YW5kYXJkX2RldmlhdGlvbjogbnVtIFsxOjE4MF0gMC40NTMgMC40ODUgMC40NTYgMC41NDYgMC41NDIgLi4uDQoNCg0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNvZGUgQm9vayBmb3IgR2V0dGluZyAmIENsZWFuaW5nIERhdGEgQ291cnNlIFByb2plY3QgLSBLaGFsaWwgQWJhYm91IFN1Ym1pc3Npb24iDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCmVkaXRvcl9vcHRpb25zOiANCiAgbWFya2Rvd246IA0KICAgIHdyYXA6IDcyDQotLS0NCg0KVGhlIHJ1bl9hbmFseXNpcy5SIHNjcmlwdCBwZXJmb3JtcyBhY3Rpb25zIHJlcXVpcmVkIGluIHRoZSBDb3Vyc2VyYQ0KR2V0dGluZyBhbmQgQ2xlYW5pbmcgRGF0YSBDb3Vyc2UgUHJvamVjdCwgYW5kIHdhcyBwcm9kdWNlZCBieSBLaGFsaWwNCkFiYWJvdS4gVGhpcyBmaWxlIG1vZGlmaWVzIGFuZCB1cGRhdGVzIHRoZSBwcm92aWRlZCBjb2RlYm9va3Mgd2l0aCB0aGUNCmRhdGEgdG8gaW5kaWNhdGUgYWxsIHRoZSB2YXJpYWJsZXMgYW5kIHN1bW1hcmllcyBjYWxjdWxhdGVkLCBhbG9uZyB3aXRoDQp1bml0cywgYW5kIGFueSBvdGhlciByZWxldmFudCBpbmZvcm1hdGlvbi4NCg0KIyBkYXRhDQoNCihEYXRhIEZyYW1lKSBSYXcgZGF0YSBjb21iaW5pbmcgdGhlIGZvbGxvd2luZyBmaWxlczoNCg0KICAgICAgWF90cmFpbiA8LSByZWFkLnRhYmxlKCIuL1VDSSBIQVIgRGF0YXNldC90cmFpbi9YX3RyYWluLnR4dCIpDQogICAgICB5X3RyYWluIDwtIHJlYWQudGFibGUoIi4vVUNJIEhBUiBEYXRhc2V0L3RyYWluL3lfdHJhaW4udHh0IikNCiAgICAgIHN1YmplY3RfdHJhaW4gPC0gcmVhZC50YWJsZSAoIi4vVUNJIEhBUiBEYXRhc2V0L3RyYWluL3N1YmplY3RfdHJhaW4udHh0IikNCiAgICAgIFhfdGVzdCA8LSByZWFkLnRhYmxlKCIuL1VDSSBIQVIgRGF0YXNldC90ZXN0L1hfdGVzdC50eHQiKQ0KICAgICAgeV90ZXN0IDwtIHJlYWQudGFibGUoIi4vVUNJIEhBUiBEYXRhc2V0L3Rlc3QveV90ZXN0LnR4dCIpDQogICAgICBzdWJqZWN0X3Rlc3QgPC0gcmVhZC50YWJsZSgiLi9VQ0kgSEFSIERhdGFzZXQvdGVzdC9zdWJqZWN0X3Rlc3QudHh0IikNCiAgICAgIGFjdGl2aXR5X2xhYmVscyA8LSByZWFkLnRhYmxlKCIuL1VDSSBIQVIgRGF0YXNldC9hY3Rpdml0eV9sYWJlbHMudHh0IikNCg0KIyBkYXRhc3VtbWFyeQ0KDQooRGF0YSBGcmFtZSkgVGlkeSBEYXRhIFNldCBhcyBnZW5lcmF0ZWQgaW4gdHh0IGZpbGUgKGxhc3QgcXVlc3Rpb24pDQoNCiAgICAgICMjIEZvciBlYWNoIGxpbmUgb2YgZGF0YSwgY2FsY3VsYXRpb24gb2YgbWVhbiBhbmQgc3RhbmRhcmQgZGV2aWF0aW9uIG9mIHRoZSBwcm92aWRlZCA1NjEtZmVhdHVyZSB2ZWN0b3Igd2l0aCB0aW1lIGFuZCBmcmVxdWVuY3kgZG9tYWluIHZhcmlhYmxlcy4gDQogICAgICAjIyBHcm91cGluZyBvZiBkYXRhIGJ5IFN1YmplY3QgYW5kIEFjdGl2aXR5DQoNCiMgWF90cmFpbg0KIi4vVUNJIEhBUiBEYXRhc2V0L3RyYWluL1hfdHJhaW4udHh0Ig0KDQojIHlfdHJhaW4gDQoiLi9VQ0kgSEFSIERhdGFzZXQvdHJhaW4veV90cmFpbi50eHQiDQoNCiMgc3ViamVjdF90cmFpbiANCiIuL1VDSSBIQVIgRGF0YXNldC90cmFpbi9zdWJqZWN0X3RyYWluLnR4dCINCg0KIyBYX3Rlc3QgDQoiLi9VQ0kgSEFSIERhdGFzZXQvdGVzdC9YX3Rlc3QudHh0Ig0KDQojIHlfdGVzdCANCiIuL1VDSSBIQVIgRGF0YXNldC90ZXN0L3lfdGVzdC50eHQiDQoNCiMgc3ViamVjdF90ZXN0IA0KIi4vVUNJIEhBUiBEYXRhc2V0L3Rlc3Qvc3ViamVjdF90ZXN0LnR4dCINCg0KIyBhY3Rpdml0eV9sYWJlbHMgDQoiLi9VQ0kgSEFSIERhdGFzZXQvYWN0aXZpdHlfbGFiZWxzLnR4dCINCg==</div>
 
 
 
